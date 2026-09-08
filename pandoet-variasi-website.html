@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="Bengkel Mobil Pandoet Variasi - bengkel mobil all-in-one di Sleman, Yogyakarta: servis mesin, body & cat, interior, dan variasi/aksesoris dalam satu atap.">
+<title>Pandoet Variasi</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap">
+<style>
+  :root{
+    --bg:#0b0b0d;
+    --bg-soft:#111113;
+    --panel:#18181b;
+    --panel-2:#1f1f23;
+    --ink:#f4f3ef;
+    --muted:#a4a3ab;
+    --muted-2:#6f6e78;
+    --red:#e11d2e;
+    --red-2:#ff3b46;
+    --red-deep:#5c0e17;
+    --line:rgba(244,243,239,0.10);
+    --line-soft:rgba(244,243,239,0.06);
+    --chrome-hi:#c9c9cf;
+    --chrome-lo:#3a3a40;
+    --radius-s:2px;
+    --radius-m:3px;
+    --maxw:1180px;
+  }
+
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *,*::before,*::after{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; }
+  }
+
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Manrope', ui-sans-serif, system-ui, sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+
+  img{ max-width:100%; display:block; }
+
+  h1,h2,h3,h4{
+    font-family:'Oswald', 'Arial Narrow', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.01em;
+    margin:0;
+    text-wrap:balance;
+    color:var(--ink);
+  }
+
+  .mono{ font-family:'JetBrains Mono', ui-monospace, monospace; }
+
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12.5px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--red-2);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:14px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:22px; height:2px;
+    background:var(--red);
+    display:inline-block;
+  }
+
+  a{ color:inherit; }
+
+  .wrap{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  section{ position:relative; }
+
+  ::selection{ background:var(--red); color:#fff; }
+
+  /* scrollbar - subtle industrial */
+  ::-webkit-scrollbar{ width:10px; }
+  ::-webkit-scrollbar-track{ background:var(--bg); }
+  ::-webkit-scrollbar-thumb{ background:var(--panel-2); border:2px solid var(--bg); border-radius:6px; }
+
+  /* ---------- NAV ---------- */
+  header.nav{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:rgba(11,11,13,0.72);
+    backdrop-filter:blur(10px) saturate(140%);
+    -webkit-backdrop-filter:blur(10px) saturate(140%);
+    border-bottom:1px solid var(--line-soft);
+    transition:border-color .3s ease, background .3s ease;
+  }
+  header.nav .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    height:72px;
+  }
+  .brand{
+    display:flex; align-items:center; gap:11px;
+    font-family:'Oswald'; font-weight:700; letter-spacing:0.02em;
+    font-size:18px; text-transform:uppercase; white-space:nowrap;
+  }
+  .brand-mark{
+    width:34px; height:34px; flex:none;
+    border-radius:50%;
+    background:
+      radial-gradient(circle at 33% 30%, var(--chrome-hi), var(--chrome-lo) 65%);
+    position:relative;
+    box-shadow: inset 0 0 0 2px rgba(0,0,0,.4), 0 0 0 1px var(--line);
+  }
+  .brand-mark::after{
+    content:"";
+    position:absolute; inset:9px;
+    border-radius:50%;
+    background:var(--red);
+    box-shadow:0 0 12px 1px var(--red-2);
+  }
+  .brand small{
+    display:block; font-family:'JetBrains Mono'; font-weight:500;
+    font-size:9.5px; letter-spacing:0.14em; color:var(--muted-2);
+    margin-top:2px;
+  }
+  nav.links{ display:flex; gap:34px; }
+  nav.links a{
+    font-size:13.5px; text-transform:uppercase; letter-spacing:0.06em;
+    font-weight:600; color:var(--muted); text-decoration:none;
+    position:relative; padding:4px 0;
+    transition:color .2s ease;
+  }
+  nav.links a::after{
+    content:""; position:absolute; left:0; bottom:-2px; height:2px; width:0;
+    background:var(--red); transition:width .25s ease;
+  }
+  nav.links a:hover, nav.links a:focus-visible{ color:var(--ink); }
+  nav.links a:hover::after, nav.links a:focus-visible::after{ width:100%; }
+
+  .btn{
+    display:inline-flex; align-items:center; gap:9px;
+    font-family:'Manrope'; font-weight:700; font-size:14px;
+    text-decoration:none; cursor:pointer; border:none;
+    padding:13px 24px; border-radius:999px;
+    transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+    white-space:nowrap;
+  }
+  .btn-primary{
+    background:linear-gradient(180deg, var(--red-2), var(--red));
+    color:#fff;
+    box-shadow:0 8px 24px -8px rgba(225,29,46,0.55), inset 0 1px 0 rgba(255,255,255,.25);
+  }
+  .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 14px 30px -8px rgba(225,29,46,0.7), inset 0 1px 0 rgba(255,255,255,.25); }
+  .btn-ghost{
+    background:transparent; color:var(--ink);
+    border:1px solid var(--line); padding:12px 23px;
+  }
+  .btn-ghost:hover{ border-color:var(--muted); background:var(--panel); }
+  .btn-sm{ padding:9px 17px; font-size:12.5px; }
+  .nav-cta{ display:flex; align-items:center; gap:18px; }
+  .burger{
+    display:none; flex-direction:column; justify-content:center; align-items:center; gap:5px;
+    width:38px; height:38px; flex:none; background:transparent; border:1px solid var(--line);
+    border-radius:8px; cursor:pointer; padding:0;
+  }
+  .burger span{ width:17px; height:2px; background:var(--ink); border-radius:2px; transition:transform .25s ease, opacity .25s ease; }
+  .burger[aria-expanded="true"] span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+  .burger[aria-expanded="true"] span:nth-child(2){ opacity:0; }
+  .burger[aria-expanded="true"] span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+
+  .mobile-menu{
+    display:none; flex-direction:column;
+    max-height:0; overflow:hidden;
+    background:var(--bg-soft); border-bottom:1px solid var(--line-soft);
+    transition:max-height .3s ease;
+  }
+  .mobile-menu.open{ max-height:400px; }
+  .mobile-menu a{
+    padding:16px 28px; font-size:15px; font-weight:600; text-transform:uppercase; letter-spacing:.05em;
+    color:var(--muted); text-decoration:none; border-top:1px solid var(--line-soft);
+  }
+  .mobile-menu a:active, .mobile-menu a:hover{ color:var(--ink); background:var(--panel); }
+  .mobile-menu a.mobile-wa{
+    margin:16px 20px 20px; padding:13px 20px; text-align:center; border-radius:999px;
+    background:linear-gradient(180deg, var(--red-2), var(--red)); color:#fff !important;
+    border-top:none; text-transform:none; letter-spacing:normal;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:168px 0 100px;
+    background:
+      radial-gradient(1100px 520px at 82% -8%, rgba(225,29,46,0.16), transparent 60%),
+      radial-gradient(700px 420px at 8% 8%, rgba(225,29,46,0.08), transparent 60%),
+      var(--bg);
+    position:relative;
+    border-bottom:1px solid var(--line-soft);
+    overflow:hidden;
+  }
+  .hero::before{
+    /* garage floor grid */
+    content:"";
+    position:absolute; left:0; right:0; bottom:0; height:46%;
+    background-image:
+      linear-gradient(var(--line-soft) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
+    background-size:44px 44px;
+    -webkit-mask-image:linear-gradient(to top, black, transparent);
+            mask-image:linear-gradient(to top, black, transparent);
+    transform:perspective(420px) rotateX(58deg);
+    transform-origin:bottom;
+    opacity:.6;
+    pointer-events:none;
+  }
+  .hero .wrap{
+    display:grid; grid-template-columns:1.05fr 0.95fr; gap:40px; align-items:center;
+    position:relative; z-index:2;
+  }
+  .hero h1{
+    font-size:clamp(40px, 5.4vw, 74px);
+    line-height:0.98;
+    font-weight:700;
+  }
+  .hero h1 .accent{ color:var(--red-2); }
+  .hero p.lead{
+    margin:26px 0 34px; max-width:46ch;
+    color:var(--muted); font-size:17.5px;
+  }
+  .hero-actions{ display:flex; gap:14px; flex-wrap:wrap; margin-bottom:46px; }
+
+  .hero-meta{
+    display:flex; gap:28px; flex-wrap:wrap;
+    padding-top:26px; border-top:1px solid var(--line);
+  }
+  .hero-meta .item{ min-width:120px; }
+  .hero-meta .num{
+    font-family:'JetBrains Mono'; font-weight:600; font-size:22px; color:var(--ink);
+    display:flex; align-items:baseline; gap:3px;
+  }
+  .hero-meta .num span{ font-size:13px; color:var(--red-2); }
+  .hero-meta .lbl{
+    font-size:11.5px; text-transform:uppercase; letter-spacing:0.09em; color:var(--muted-2);
+    margin-top:4px;
+  }
+
+  /* ---- 3D wheel rig ---- */
+  .rig{
+    position:relative; height:460px;
+    display:flex; align-items:center; justify-content:center;
+    perspective:1400px;
+  }
+  .rig .floor-glow{
+    position:absolute; width:320px; height:60px; border-radius:50%;
+    bottom:26px; left:50%; transform:translateX(-50%);
+    background:radial-gradient(closest-side, rgba(225,29,46,.5), transparent 72%);
+    filter:blur(6px);
+  }
+  .wheel3d{
+    position:relative;
+    width:300px; height:300px;
+    transform-style:preserve-3d;
+    animation:wheelSpin 16s linear infinite;
+    will-change:transform;
+  }
+  @keyframes wheelSpin{
+    from{ transform:rotateX(var(--tiltx,8deg)) rotateY(0deg); }
+    to{ transform:rotateX(var(--tiltx,8deg)) rotateY(360deg); }
+  }
+  .wheel3d .ring{
+    position:absolute; inset:0; border-radius:50%;
+    border:20px solid transparent;
+    background:
+      radial-gradient(circle at 40% 32%, rgba(255,255,255,.05), transparent 60%) padding-box,
+      conic-gradient(from 90deg, var(--chrome-hi), var(--chrome-lo) 25%, var(--chrome-hi) 50%, var(--chrome-lo) 75%, var(--chrome-hi)) border-box;
+    box-shadow:0 0 0 1px rgba(255,255,255,.06), inset 0 0 24px rgba(0,0,0,.5);
+  }
+  .wheel3d .ring.back{ transform:translateZ(-40px) scale(0.94); filter:brightness(.5); opacity:.85; }
+  .wheel3d .ring.front{ transform:translateZ(40px); }
+  .wheel3d .rim-edge{
+    position:absolute; inset:-8px; border-radius:50%;
+    border:3px solid rgba(225,29,46,.55);
+    box-shadow:0 0 22px rgba(225,29,46,.35);
+    transform:translateZ(0px);
+  }
+  .wheel3d .hub{
+    position:absolute; left:50%; top:50%; width:74px; height:74px;
+    margin:-37px 0 0 -37px; border-radius:50%; transform:translateZ(50px);
+    background:radial-gradient(circle at 34% 30%, var(--chrome-hi), var(--chrome-lo) 70%);
+    box-shadow:0 0 0 2px rgba(0,0,0,.4), 0 0 22px rgba(225,29,46,.55);
+  }
+  .wheel3d .hub::after{
+    content:"P"; position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+    font-family:'Oswald'; font-weight:700; color:var(--red); font-size:22px;
+    text-shadow:0 0 8px rgba(225,29,46,.8);
+  }
+  .wheel3d .spoke{
+    position:absolute; left:50%; top:50%; width:14px; height:118px;
+    margin:-59px 0 0 -7px; transform-origin:50% 50%;
+    background:linear-gradient(180deg, var(--chrome-hi), var(--chrome-lo));
+    border-radius:6px; transform:translateZ(44px);
+    box-shadow:0 0 0 1px rgba(0,0,0,.35);
+  }
+  .wheel3d .lug{
+    position:absolute; left:50%; top:50%; width:10px; height:10px; border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, #eee, #444);
+    margin:-5px 0 0 -5px; transform:translateZ(60px);
+  }
+  .rig .caliper{
+    position:absolute; width:96px; height:130px; right:10%; top:44%;
+    transform:translateY(-50%) rotateY(-18deg) translateZ(70px);
+    background:linear-gradient(160deg, var(--red-2), var(--red-deep));
+    border-radius:10px 10px 22px 22px;
+    box-shadow:0 14px 30px -8px rgba(225,29,46,.6), inset 0 1px 0 rgba(255,255,255,.3);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .rig .caliper span{
+    font-family:'Oswald'; font-weight:700; font-size:11px; letter-spacing:.14em;
+    color:rgba(255,255,255,.85); writing-mode:vertical-rl; text-orientation:mixed;
+  }
+  .float-chip{
+    position:absolute; background:var(--panel); border:1px solid var(--line);
+    border-radius:10px; padding:10px 14px; font-family:'JetBrains Mono';
+    font-size:11.5px; color:var(--muted); box-shadow:0 20px 40px -20px rgba(0,0,0,.7);
+    animation:floaty 5s ease-in-out infinite;
+  }
+  .float-chip b{ color:var(--ink); display:block; font-size:13px; margin-bottom:1px; }
+  .chip-1{ top:6%; left:0%; animation-delay:.2s; }
+  .chip-2{ bottom:10%; right:2%; animation-delay:1.4s; }
+  @keyframes floaty{ 0%,100%{ transform:translateY(0px);} 50%{ transform:translateY(-10px);} }
+
+  /* ---------- MARQUEE ---------- */
+  .marquee{
+    border-top:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft);
+    background:var(--bg-soft); overflow:hidden; padding:16px 0;
+  }
+  .marquee-track{
+    display:flex; gap:56px; width:max-content;
+    animation:scrollLeft 26s linear infinite;
+  }
+  .marquee:hover .marquee-track{ animation-play-state:paused; }
+  @keyframes scrollLeft{ from{ transform:translateX(0);} to{ transform:translateX(-50%);} }
+  .marquee-item{
+    display:flex; align-items:center; gap:12px;
+    font-family:'JetBrains Mono'; font-size:13px; letter-spacing:.06em;
+    color:var(--muted-2); text-transform:uppercase; white-space:nowrap;
+  }
+  .marquee-item .dot{ width:5px; height:5px; border-radius:50%; background:var(--red); }
+
+  /* ---------- SECTION HEADERS ---------- */
+  .sec{ padding:104px 0; }
+  .sec-head{
+    display:flex; justify-content:space-between; align-items:flex-end; gap:30px;
+    margin-bottom:56px; flex-wrap:wrap;
+  }
+  .sec-head h2{ font-size:clamp(28px,3.4vw,42px); max-width:16ch; }
+  .sec-head p{ color:var(--muted); max-width:38ch; font-size:15.5px; margin:0; }
+
+  .reveal{ opacity:0; transform:translateY(26px); transition:opacity .7s ease, transform .7s ease; }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+
+  /* ---------- ABOUT ---------- */
+  .about{ background:var(--bg-soft); border-top:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft); }
+  .about .wrap{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:64px; align-items:center; }
+  .about-visual{
+    position:relative; aspect-ratio:1/1.05; border-radius:6px; overflow:hidden;
+    background:
+      linear-gradient(160deg, var(--panel-2), var(--bg));
+    border:1px solid var(--line);
+  }
+  .about-visual .grid-overlay{
+    position:absolute; inset:0;
+    background-image:linear-gradient(var(--line-soft) 1px, transparent 1px), linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
+    background-size:28px 28px;
+  }
+  .about-visual .center-badge{
+    position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px;
+    text-align:center; padding:30px;
+  }
+  .gear3d{
+    width:140px; height:140px; position:relative; transform-style:preserve-3d;
+    animation:gearspin 10s linear infinite;
+  }
+  @keyframes gearspin{ from{ transform:rotateZ(0) rotateX(18deg);} to{ transform:rotateZ(360deg) rotateX(18deg);} }
+  .gear3d .body{
+    position:absolute; inset:0; border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, #55555c, #0e0e10 72%);
+    box-shadow:0 0 40px rgba(225,29,46,.35), inset 0 0 0 8px rgba(0,0,0,.4);
+  }
+  .gear3d .tooth{
+    position:absolute; left:50%; top:50%; width:18px; height:34px;
+    margin:-17px 0 0 -9px; background:#3d3d43; border-radius:3px;
+    transform-origin:50% 90px;
+  }
+  .gear3d::after{
+    content:""; position:absolute; inset:38px; border-radius:50%;
+    background:var(--bg); box-shadow:inset 0 0 14px rgba(0,0,0,.7), 0 0 0 3px var(--red);
+  }
+  .about-visual .stat-badge{
+    font-family:'JetBrains Mono'; font-size:12px; color:var(--muted); letter-spacing:.05em;
+  }
+  .about-copy .kicker{ margin-bottom:18px; }
+  .about-copy h2{ font-size:clamp(26px,3vw,36px); margin-bottom:22px; max-width:18ch; }
+  .about-copy p{ color:var(--muted); font-size:16px; max-width:56ch; }
+  .about-copy p + p{ margin-top:16px; }
+  .about-facts{
+    margin-top:34px; display:grid; grid-template-columns:repeat(3,1fr); gap:1px;
+    background:var(--line); border:1px solid var(--line); border-radius:6px; overflow:hidden;
+  }
+  .about-facts .fact{ background:var(--bg-soft); padding:20px 16px; }
+  .about-facts .fact .n{ font-family:'JetBrains Mono'; color:var(--red-2); font-weight:600; font-size:24px; }
+  .about-facts .fact .t{ font-size:12px; color:var(--muted-2); margin-top:6px; text-transform:uppercase; letter-spacing:.05em; }
+
+  /* ---------- SERVICES ---------- */
+  .services-grid{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:1px;
+    background:var(--line); border:1px solid var(--line); border-radius:8px; overflow:hidden;
+  }
+  .svc-card{
+    background:var(--panel); padding:34px 26px; position:relative;
+    transition:background .35s ease;
+    transform-style:preserve-3d; will-change:transform;
+  }
+  .svc-card:hover{ background:var(--panel-2); }
+  .svc-card .idx{
+    font-family:'JetBrains Mono'; font-size:12.5px; color:var(--muted-2); margin-bottom:26px; display:block;
+  }
+  .svc-icon{
+    width:52px; height:52px; border-radius:50%; margin-bottom:22px;
+    display:flex; align-items:center; justify-content:center;
+    background:radial-gradient(circle at 32% 28%, var(--chrome-hi), var(--chrome-lo) 75%);
+    box-shadow:0 0 0 1px rgba(0,0,0,.3);
+    transform:translateZ(24px);
+  }
+  .svc-icon svg{ width:24px; height:24px; stroke:var(--red); }
+  .svc-card h3{ font-size:18px; margin-bottom:12px; letter-spacing:.01em; }
+  .svc-card p{ color:var(--muted); font-size:14px; margin:0 0 18px; }
+  .svc-list{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:7px; }
+  .svc-list li{
+    font-size:12.5px; color:var(--muted-2); display:flex; gap:8px; align-items:flex-start;
+    font-family:'JetBrains Mono';
+  }
+  .svc-list li::before{ content:"–"; color:var(--red); flex:none; }
+
+  /* ---------- WHY / ADVANTAGES ---------- */
+  .why{ background:var(--bg-soft); border-top:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft); }
+  .why-grid{ display:grid; grid-template-columns:repeat(5,1fr); gap:26px; }
+  .why-card{ text-align:left; }
+  .why-num{
+    font-family:'JetBrains Mono'; color:var(--red-2); font-size:13px; margin-bottom:16px;
+  }
+  .why-card h4{ font-size:15.5px; margin-bottom:10px; letter-spacing:.01em; }
+  .why-card p{ color:var(--muted); font-size:13.5px; margin:0; }
+
+  /* ---------- GALLERY ---------- */
+  .gallery-grid{
+    display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:150px; gap:10px;
+  }
+  .gallery-grid .g-item:nth-child(1){ grid-column:span 2; grid-row:span 2; }
+  .gallery-grid .g-item:nth-child(4){ grid-column:span 2; }
+  .gallery-grid .g-item:nth-child(6){ grid-row:span 2; }
+  .g-item{
+    position:relative; border-radius:6px; overflow:hidden; border:1px solid var(--line);
+    display:flex; align-items:flex-end; padding:14px;
+    background:
+      linear-gradient(0deg, rgba(0,0,0,.55), rgba(0,0,0,0) 60%),
+      var(--g-c2, var(--panel));
+    background-image:
+      linear-gradient(0deg, rgba(0,0,0,.6), rgba(0,0,0,.05) 55%),
+      repeating-linear-gradient(135deg, var(--g-c1) 0 2px, var(--g-c2) 2px 26px);
+    transition:transform .4s ease;
+  }
+  .g-item:hover{ transform:scale(1.02); }
+  .g-item span{
+    font-family:'JetBrains Mono'; font-size:11.5px; color:#fff; letter-spacing:.04em;
+    background:rgba(0,0,0,.35); padding:5px 9px; border-radius:4px; backdrop-filter:blur(2px);
+  }
+  .gallery-note{
+    margin-top:20px; font-size:12.5px; color:var(--muted-2); font-family:'JetBrains Mono';
+    display:flex; align-items:center; gap:8px;
+  }
+
+  /* ---------- TESTIMONIAL / TRUST ---------- */
+  .trust{ background:var(--bg-soft); border-top:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft); }
+  .trust-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:8px; overflow:hidden; }
+  .t-card{ background:var(--panel); padding:30px 28px; }
+  .t-quote-mark{ font-family:'Oswald'; font-size:44px; color:var(--red); line-height:.4; margin-bottom:14px; display:block; }
+  .t-card p.qt{ color:var(--ink); font-size:14.5px; min-height:70px; }
+  .t-card .who{ margin-top:18px; display:flex; align-items:center; gap:10px; }
+  .who .avatar{ width:34px; height:34px; border-radius:50%; background:linear-gradient(160deg, var(--chrome-hi), var(--chrome-lo)); flex:none; }
+  .who .name{ font-size:13px; font-weight:700; }
+  .who .role{ font-size:11.5px; color:var(--muted-2); }
+  .t-card.placeholder{ display:flex; flex-direction:column; align-items:flex-start; justify-content:center; gap:10px; }
+  .t-card.placeholder .badge{
+    font-family:'JetBrains Mono'; font-size:10.5px; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--red-2); border:1px dashed rgba(225,29,46,.4); padding:5px 10px; border-radius:20px;
+  }
+  .t-card.placeholder p{ color:var(--muted-2); font-size:13px; }
+
+  /* ---------- CTA STRIP ---------- */
+  .cta-strip{
+    padding:80px 0; position:relative; overflow:hidden;
+    background:
+      radial-gradient(700px 300px at 20% 0%, rgba(225,29,46,.22), transparent 65%),
+      var(--bg);
+    border-top:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft);
+  }
+  .cta-strip .wrap{ display:flex; align-items:center; justify-content:space-between; gap:30px; flex-wrap:wrap; }
+  .cta-strip h2{ font-size:clamp(26px,3.4vw,38px); max-width:18ch; }
+  .cta-strip p{ color:var(--muted); margin-top:12px; max-width:44ch; }
+  .cta-actions{ display:flex; gap:14px; flex-wrap:wrap; }
+
+  /* ---------- CONTACT ---------- */
+  .contact .wrap{ display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line); border:1px solid var(--line); border-radius:8px; overflow:hidden; }
+  .contact-panel{ background:var(--panel); padding:48px 42px; }
+  .contact-panel h3{ font-size:22px; margin-bottom:22px; }
+  .info-row{ display:flex; gap:16px; padding:16px 0; border-top:1px solid var(--line); }
+  .info-row:first-of-type{ border-top:none; }
+  .info-ic{
+    width:38px; height:38px; border-radius:50%; flex:none;
+    background:radial-gradient(circle at 32% 28%, var(--chrome-hi), var(--chrome-lo) 75%);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .info-ic svg{ width:17px; height:17px; stroke:var(--red); }
+  .info-row .lbl{ font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--muted-2); margin-bottom:4px; }
+  .info-row .val{ font-size:14.5px; color:var(--ink); }
+  .info-row .val small{ display:block; color:var(--muted-2); font-family:'JetBrains Mono'; font-size:11.5px; margin-top:4px; }
+
+  .contact-panel.map-panel{
+    display:flex; flex-direction:column; justify-content:space-between;
+    background:
+      radial-gradient(500px 260px at 80% 0%, rgba(225,29,46,.14), transparent 60%),
+      var(--bg-soft);
+  }
+  .fake-map{
+    flex:1; min-height:200px; position:relative; border-radius:6px; overflow:hidden;
+    background:
+      linear-gradient(var(--line-soft) 1px, transparent 1px), linear-gradient(90deg, var(--line-soft) 1px, transparent 1px),
+      var(--panel);
+    background-size:26px 26px; margin-bottom:24px;
+    border:1px solid var(--line);
+  }
+  .fake-map .pin{
+    position:absolute; left:52%; top:44%; width:26px; height:26px; border-radius:50% 50% 50% 0;
+    background:var(--red); transform:translate(-50%,-100%) rotate(-45deg);
+    box-shadow:0 0 18px rgba(225,29,46,.7);
+  }
+  .fake-map .pin::after{ content:""; position:absolute; inset:6px; border-radius:50%; background:#fff; }
+  .fake-map .rd{ position:absolute; background:var(--line); }
+  .fake-map .rd1{ left:0; right:0; top:44%; height:10px; transform:skewY(-2deg); }
+  .fake-map .rd2{ top:0; bottom:0; left:52%; width:8px; transform:skewX(3deg); }
+
+  /* ---------- FOOTER ---------- */
+  footer{ background:var(--bg-soft); padding:64px 0 26px; }
+  .footer-top{ display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; padding-bottom:44px; border-bottom:1px solid var(--line); }
+  .footer-brand p{ color:var(--muted); font-size:13.5px; max-width:32ch; margin-top:16px; }
+  .footer-col h5{ font-size:12px; text-transform:uppercase; letter-spacing:.08em; color:var(--muted-2); margin-bottom:16px; font-family:'JetBrains Mono'; }
+  .footer-col ul{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px; }
+  .footer-col a{ color:var(--muted); text-decoration:none; font-size:13.5px; transition:color .2s; }
+  .footer-col a:hover{ color:var(--red-2); }
+  .social-row{ display:flex; gap:10px; margin-top:16px; }
+  .social-row a{
+    width:36px; height:36px; border-radius:50%; border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center; transition:border-color .2s, color .2s;
+  }
+  .social-row a:hover{ border-color:var(--red); color:var(--red-2); }
+  .social-row svg{ width:15px; height:15px; }
+  .footer-bottom{ padding-top:22px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-size:12px; color:var(--muted-2); font-family:'JetBrains Mono'; }
+
+  /* WA float button */
+  .wa-float{
+    position:fixed; right:22px; bottom:22px; z-index:90;
+    width:58px; height:58px; border-radius:50%;
+    background:linear-gradient(160deg, var(--red-2), var(--red));
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 14px 30px -10px rgba(225,29,46,.7);
+    animation:pulseWa 2.6s ease-in-out infinite;
+  }
+  .wa-float svg{ width:26px; height:26px; fill:#fff; }
+  @keyframes pulseWa{ 0%,100%{ box-shadow:0 14px 30px -10px rgba(225,29,46,.7);} 50%{ box-shadow:0 14px 42px -6px rgba(225,29,46,.9);} }
+
+  @media (max-width: 980px){
+    nav.links{ display:none; }
+    .burger{ display:flex; }
+    .mobile-menu{ display:flex; }
+    .nav-cta a.btn-primary{ display:none; }
+    .brand small{ display:none; }
+    .hero .wrap{ grid-template-columns:1fr; }
+    .rig{ height:340px; }
+    .about .wrap{ grid-template-columns:1fr; }
+    .services-grid{ grid-template-columns:repeat(2,1fr); }
+    .why-grid{ grid-template-columns:repeat(2,1fr); }
+    .trust-grid{ grid-template-columns:1fr; }
+    .contact .wrap{ grid-template-columns:1fr; }
+    .footer-top{ grid-template-columns:1fr 1fr; }
+    .gallery-grid{ grid-template-columns:repeat(2,1fr); }
+  }
+  @media (max-width: 560px){
+    .services-grid, .why-grid{ grid-template-columns:1fr; }
+    .footer-top{ grid-template-columns:1fr; }
+    .about-facts{ grid-template-columns:1fr; }
+    .gallery-grid{ grid-template-columns:1fr; grid-auto-rows:160px; }
+    .gallery-grid .g-item{ grid-column:span 1 !important; grid-row:span 1 !important; }
+  }
+</style>
+</head>
+<body>
+
+
+<header class="nav">
+  <div class="wrap">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>Pandoet Variasi<small>BENGKEL MOBIL &middot; YOGYAKARTA</small></span>
+    </div>
+    <nav class="links">
+      <a href="#tentang">Tentang</a>
+      <a href="#layanan">Layanan</a>
+      <a href="#keunggulan">Keunggulan</a>
+      <a href="#galeri">Galeri</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-primary btn-sm" href="https://wa.me/6281390766622" target="_blank" rel="noopener">Chat WhatsApp</a>
+      <button class="burger" id="burgerBtn" aria-label="Buka menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-menu" id="mobileMenu">
+    <a href="#tentang">Tentang</a>
+    <a href="#layanan">Layanan</a>
+    <a href="#keunggulan">Keunggulan</a>
+    <a href="#galeri">Galeri</a>
+    <a href="#kontak">Kontak</a>
+    <a class="mobile-wa" href="https://wa.me/6281390766622" target="_blank" rel="noopener">Chat WhatsApp</a>
+  </nav>
+</header>
+
+<section class="hero" id="beranda">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Bengkel All-In-One &middot; Sleman, DIY</p>
+      <h1>Satu Bengkel,<br>Tuntas Semua<br><span class="accent">Urusan Mobil.</span></h1>
+      <p class="lead">Dari mesin, body &amp; cat, interior, sampai variasi &amp; aksesoris — dikerjakan mekanik berpengalaman dalam satu atap, rapi, bergaransi, dan harga bisa disesuaikan budget Anda.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://wa.me/6281390766622" target="_blank" rel="noopener">
+          Konsultasi Gratis via WA
+        </a>
+        <a class="btn btn-ghost" href="#layanan">Lihat Semua Layanan</a>
+      </div>
+      <div class="hero-meta">
+        <div class="item">
+          <div class="num">4<span>/4</span></div>
+          <div class="lbl">Divisi servis dalam 1 bengkel</div>
+        </div>
+        <div class="item">
+          <div class="num">09–18<span>WIB</span></div>
+          <div class="lbl">Senin – Sabtu</div>
+        </div>
+        <div class="item">
+          <div class="num">100<span>%</span></div>
+          <div class="lbl">Konsultasi &amp; estimasi gratis</div>
+        </div>
+      </div>
+    </div>
+    <div class="rig" id="rig">
+      <div class="floor-glow"></div>
+      <div class="float-chip chip-1"><b>Body Repair</b>Ketok &amp; cat presisi</div>
+      <div class="float-chip chip-2"><b>Variasi</b>Kaca film &middot; audio &middot; velg</div>
+      <div class="wheel3d" id="wheel3d">
+        <div class="ring back"></div>
+        <div class="rim-edge"></div>
+        <div class="spoke" style="transform:translateZ(44px) rotate(0deg)"></div>
+        <div class="spoke" style="transform:translateZ(44px) rotate(72deg)"></div>
+        <div class="spoke" style="transform:translateZ(44px) rotate(144deg)"></div>
+        <div class="spoke" style="transform:translateZ(44px) rotate(216deg)"></div>
+        <div class="spoke" style="transform:translateZ(44px) rotate(288deg)"></div>
+        <div class="ring front"></div>
+        <div class="hub"></div>
+        <div class="lug" style="transform:translateZ(60px) rotate(0deg) translateY(-30px)"></div>
+        <div class="lug" style="transform:translateZ(60px) rotate(72deg) translateY(-30px)"></div>
+        <div class="lug" style="transform:translateZ(60px) rotate(144deg) translateY(-30px)"></div>
+        <div class="lug" style="transform:translateZ(60px) rotate(216deg) translateY(-30px)"></div>
+        <div class="lug" style="transform:translateZ(60px) rotate(288deg) translateY(-30px)"></div>
+      </div>
+      <div class="caliper"><span>PANDOET</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="marqueeTrack">
+  </div>
+</div>
+
+<section class="sec about" id="tentang">
+  <div class="wrap">
+    <div class="about-visual reveal">
+      <div class="grid-overlay"></div>
+      <div class="center-badge">
+        <div class="gear3d">
+          <div class="body"></div>
+          <div class="tooth" style="transform:rotate(0deg) translateY(-90px)"></div>
+          <div class="tooth" style="transform:rotate(45deg) translateY(-90px)"></div>
+          <div class="tooth" style="transform:rotate(90deg) translateY(-90px)"></div>
+          <div class="tooth" style="transform:rotate(135deg) translateY(-90px)"></div>
+          <div class="tooth" style="transform:rotate(180deg) translateY(-90px)"></div>
+          <div class="tooth" style="transform:rotate(225deg) translateY(-90px)"></div>
+          <div class="tooth" style="transform:rotate(270deg) translateY(-90px)"></div>
+          <div class="tooth" style="transform:rotate(315deg) translateY(-90px)"></div>
+        </div>
+        <div class="stat-badge">Jl. Kaliurang Timur, Sinduharjo &middot; Sleman</div>
+      </div>
+    </div>
+    <div class="about-copy reveal">
+      <p class="eyebrow kicker">Tentang Kami</p>
+      <h2>Bengkel keluarga yang tumbuh jadi rujukan bengkel all-in-one di Jogja.</h2>
+      <p>Pandoet Variasi berawal dari bengkel variasi &amp; aksesoris di kawasan Kaliurang, Sleman, lalu berkembang menjadi bengkel mobil yang menangani seluruh kebutuhan kendaraan — bukan cuma pasang variasi, tapi juga servis mesin, perbaikan body, sampai renovasi interior.</p>
+      <p>Filosofi kami sederhana: pemilik mobil tidak perlu bolak-balik ke bengkel berbeda untuk tiap masalah. Cukup satu tempat, satu tim, satu standar kerapian — dengan opsi harga yang bisa disesuaikan kebutuhan dan bujet setiap pelanggan.</p>
+      <div class="about-facts">
+        <div class="fact"><div class="n">04</div><div class="t">Divisi Servis</div></div>
+        <div class="fact"><div class="n">Sen–Sab</div><div class="t">Jam Operasional</div></div>
+        <div class="fact"><div class="n">DIY</div><div class="t">Melayani Area Jogja</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="layanan">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <p class="eyebrow">Layanan</p>
+        <h2>Empat divisi, satu atap bengkel.</h2>
+      </div>
+      <p>Setiap divisi ditangani mekanik dengan fokus kerja masing-masing, supaya hasil akhir tetap presisi walau pekerjaan dobel — misal servis mesin sekaligus pasang variasi.</p>
+    </div>
+
+    <div class="services-grid reveal">
+      <div class="svc-card" data-tilt>
+        <span class="idx mono">01 / MESIN</span>
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"></path></svg></div>
+        <h3>Servis Mesin</h3>
+        <p>Perawatan &amp; perbaikan mesin harian sampai berat.</p>
+        <ul class="svc-list">
+          <li>Servis berkala &amp; tune up</li>
+          <li>Diagnosa &amp; scan komputer</li>
+          <li>Ganti oli, filter, aki</li>
+          <li>Perbaikan kelistrikan mesin</li>
+        </ul>
+      </div>
+      <div class="svc-card" data-tilt>
+        <span class="idx mono">02 / BODY &amp; CAT</span>
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l3-7h12l3 7-3 7H6l-3-7z"></path><circle cx="9" cy="12" r="1.4"></circle><circle cx="15" cy="12" r="1.4"></circle></svg></div>
+        <h3>Body Repair &amp; Cat</h3>
+        <p>Perbaikan penyok, lecet, sampai pengecatan ulang.</p>
+        <ul class="svc-list">
+          <li>Ketok magic &amp; dempul</li>
+          <li>Cat ulang &amp; oven bodi</li>
+          <li>Poles &amp; coating bodi</li>
+          <li>Perbaikan bekas benturan</li>
+        </ul>
+      </div>
+      <div class="svc-card" data-tilt>
+        <span class="idx mono">03 / INTERIOR</span>
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="11" rx="2"></rect><path d="M7 7V5a2 2 0 012-2h6a2 2 0 012 2v2"></path></svg></div>
+        <h3>Interior</h3>
+        <p>Kenyamanan kabin, dari jok sampai peredam suara.</p>
+        <ul class="svc-list">
+          <li>Jok custom &amp; sarung jok</li>
+          <li>Karpet dasar &amp; plafon</li>
+          <li>Peredam kabin</li>
+          <li>Pasang audio interior</li>
+        </ul>
+      </div>
+      <div class="svc-card" data-tilt>
+        <span class="idx mono">04 / VARIASI</span>
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"></circle><circle cx="12" cy="12" r="2.6"></circle><path d="M12 4v3M12 17v3M4 12h3M17 12h3"></path></svg></div>
+        <h3>Variasi &amp; Aksesoris</h3>
+        <p>Tampil beda dengan sentuhan modifikasi yang pas.</p>
+        <ul class="svc-list">
+          <li>Kaca film &amp; sound system</li>
+          <li>Lampu LED / HID</li>
+          <li>Velg &amp; aksesoris eksterior</li>
+          <li>Wrapping &amp; PPF</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec why" id="keunggulan">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <p class="eyebrow">Kenapa Pandoet Variasi</p>
+        <h2>Dikerjakan serius, bukan sekadar dipasang.</h2>
+      </div>
+    </div>
+    <div class="why-grid reveal">
+      <div class="why-card">
+        <div class="why-num mono">01</div>
+        <h4>One-Stop Service</h4>
+        <p>Mesin, body, interior, dan variasi tuntas dalam satu kunjungan.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-num mono">02</div>
+        <h4>Mekanik Berpengalaman</h4>
+        <p>Tim yang terbiasa menangani beragam merek &amp; tipe mobil.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-num mono">03</div>
+        <h4>Harga Fleksibel</h4>
+        <p>Pilihan spare part &amp; aksesoris disesuaikan bujet Anda.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-num mono">04</div>
+        <h4>Konsultasi Gratis</h4>
+        <p>Diskusi kebutuhan &amp; estimasi biaya sebelum mulai kerja.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-num mono">05</div>
+        <h4>Hasil Rapi &amp; Bergaransi</h4>
+        <p>Standar pengerjaan konsisten untuk tiap kendaraan yang masuk.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="galeri">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <p class="eyebrow">Galeri Pekerjaan</p>
+        <h2>Contoh tampilan galeri hasil kerja.</h2>
+      </div>
+      <p>Slot ini siap diisi foto dokumentasi asli — proses pengerjaan, before/after, dan hasil akhir tiap kendaraan.</p>
+    </div>
+    <div class="gallery-grid reveal" style="--g-c1:#1b1b1e;--g-c2:#232326;">
+      <div class="g-item" style="--g-c1:#241014;--g-c2:#160b0d;"><span>Body Repair — Before / After</span></div>
+      <div class="g-item"><span>Servis Mesin</span></div>
+      <div class="g-item" style="--g-c1:#241014;--g-c2:#160b0d;"><span>Custom Interior</span></div>
+      <div class="g-item"><span>Pemasangan Velg</span></div>
+      <div class="g-item" style="--g-c1:#241014;--g-c2:#160b0d;"><span>Cat &amp; Poles Bodi</span></div>
+      <div class="g-item"><span>Instalasi Audio</span></div>
+    </div>
+    <p class="gallery-note"><span class="mono">CATATAN:</span> gambar di atas placeholder desain — ganti dengan foto asli hasil pekerjaan bengkel.</p>
+  </div>
+</section>
+
+<section class="sec trust" id="testimoni">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <p class="eyebrow">Testimoni</p>
+        <h2>Slot ulasan pelanggan.</h2>
+      </div>
+      <p>Bagian ini didesain untuk menampung ulasan asli pelanggan begitu tersedia — bukan ulasan bawaan.</p>
+    </div>
+    <div class="trust-grid reveal">
+      <div class="t-card placeholder">
+        <span class="badge">Contoh Slot #1</span>
+        <p>Tempatkan kutipan ulasan pelanggan asli di sini, lengkap dengan nama &amp; jenis servis yang dikerjakan.</p>
+      </div>
+      <div class="t-card placeholder">
+        <span class="badge">Contoh Slot #2</span>
+        <p>Bisa diisi tangkapan layar chat WhatsApp atau review Google Maps yang sudah diizinkan pelanggan.</p>
+      </div>
+      <div class="t-card placeholder">
+        <span class="badge">Contoh Slot #3</span>
+        <p>Setelah ada beberapa ulasan asli, bagian ini juga bisa ditautkan langsung ke profil Google Maps bengkel.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="wrap reveal">
+    <div>
+      <h2>Mobil Anda butuh perhatian penuh?</h2>
+      <p>Chat dulu, ceritakan kondisi mobilnya — tim kami bantu cek kebutuhan &amp; estimasi biaya tanpa dipungut biaya konsultasi.</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn btn-primary" href="https://wa.me/6281390766622" target="_blank" rel="noopener">Chat WhatsApp Sekarang</a>
+      <a class="btn btn-ghost" href="#layanan">Lihat Layanan</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec contact" id="kontak">
+  <div class="wrap reveal" style="display:grid;">
+    <div class="wrap" style="padding:0; max-width:none;">
+      <div class="sec-head" style="margin-bottom:44px;">
+        <div>
+          <p class="eyebrow">Kontak &amp; Lokasi</p>
+          <h2>Mampir langsung atau chat dulu.</h2>
+        </div>
+      </div>
+    </div>
+    <div class="wrap" style="padding:0; max-width:none;">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line); border:1px solid var(--line); border-radius:8px; overflow:hidden;" class="contact-grid-inner">
+        <div class="contact-panel">
+          <h3>Info Bengkel</h3>
+          <div class="info-row">
+            <div class="info-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 1118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
+            <div><div class="lbl">Alamat</div><div class="val">Jl. Kaliurang Timur, Palgading, Sinduharjo, Kec. Ngaglik, Kabupaten Sleman, DIY 55581<small>Mohon konfirmasi pin lokasi persis di Google Maps</small></div></div>
+          </div>
+          <div class="info-row">
+            <div class="info-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.8 19.8 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.99.36 1.96.68 2.89a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.19-1.25a2 2 0 012.11-.45c.93.32 1.9.55 2.89.68A2 2 0 0122 16.92z"></path></svg></div>
+            <div><div class="lbl">WhatsApp</div><div class="val">0813-9076-6622<small>Chat langsung untuk konsultasi &amp; janji servis</small></div></div>
+          </div>
+          <div class="info-row">
+            <div class="info-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg></div>
+            <div><div class="lbl">Jam Operasional</div><div class="val">Senin – Sabtu, 09.00 – 18.00 WIB<small>Minggu &amp; hari libur nasional tutup</small></div></div>
+          </div>
+          <div class="info-row">
+            <div class="info-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"></rect><path d="M8 21h8M12 17v4"></path></svg></div>
+            <div><div class="lbl">Instagram</div><div class="val">@pandoet_variasi_jogja</div></div>
+          </div>
+        </div>
+        <div class="contact-panel map-panel">
+          <div class="fake-map">
+            <div class="rd rd1"></div><div class="rd rd2"></div>
+            <div class="pin"></div>
+          </div>
+          <a class="btn btn-primary" style="width:100%; justify-content:center;" href="https://wa.me/6281390766622" target="_blank" rel="noopener">Buat Janji Servis via WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>Pandoet Variasi</span>
+        </div>
+        <p>Bengkel mobil all-in-one di Sleman, Yogyakarta — mesin, body, interior, dan variasi dalam satu atap.</p>
+        <div class="social-row">
+          <a href="https://www.instagram.com/pandoet_variasi_jogja/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1"></circle></svg></a>
+          <a href="https://wa.me/6281390766622" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.82L2 22l5.4-1.36a9.9 9.9 0 004.64 1.15h.01c5.46 0 9.9-4.45 9.9-9.9C21.96 6.45 17.5 2 12.04 2zm0 18.06h-.01a8.3 8.3 0 01-4.24-1.16l-.3-.18-3.16.8.85-3.08-.2-.32a8.2 8.2 0 01-1.27-4.4 8.24 8.24 0 018.24-8.24 8.24 8.24 0 018.24 8.24 8.24 8.24 0 01-8.24 8.24z"></path></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Layanan</h5>
+        <ul>
+          <li><a href="#layanan">Servis Mesin</a></li>
+          <li><a href="#layanan">Body Repair &amp; Cat</a></li>
+          <li><a href="#layanan">Interior</a></li>
+          <li><a href="#layanan">Variasi &amp; Aksesoris</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Navigasi</h5>
+        <ul>
+          <li><a href="#tentang">Tentang</a></li>
+          <li><a href="#keunggulan">Keunggulan</a></li>
+          <li><a href="#galeri">Galeri</a></li>
+          <li><a href="#kontak">Kontak</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Kontak</h5>
+        <ul>
+          <li>Jl. Kaliurang Timur, Sinduharjo, Sleman, DIY</li>
+          <li>0813-9076-6622</li>
+          <li>Senin – Sabtu, 09.00–18.00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Bengkel Mobil Pandoet Variasi. Seluruh hak cipta dilindungi.</span>
+      <span>Website oleh HJ Corporate</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/6281390766622" target="_blank" rel="noopener" aria-label="Chat WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.82L2 22l5.4-1.36a9.9 9.9 0 004.64 1.15h.01c5.46 0 9.9-4.45 9.9-9.9C21.96 6.45 17.5 2 12.04 2zm0 18.06h-.01a8.3 8.3 0 01-4.24-1.16l-.3-.18-3.16.8.85-3.08-.2-.32a8.2 8.2 0 01-1.27-4.4 8.24 8.24 0 018.24-8.24 8.24 8.24 0 018.24 8.24 8.24 8.24 0 01-8.24 8.24z"></path></svg>
+</a>
+
+<script>
+  (function(){
+    // marquee content
+    var items = [
+      "Servis Mesin","Body Repair & Cat","Custom Interior","Kaca Film & Audio",
+      "Velg & Aksesoris","Wrapping & PPF","Ketok Magic","Konsultasi Gratis"
+    ];
+    var track = document.getElementById('marqueeTrack');
+    var html = '';
+    for(var r=0;r<2;r++){
+      items.forEach(function(t){
+        html += '<div class="marquee-item"><span class="dot"></span>' + t + '</div>';
+      });
+    }
+    track.innerHTML = html;
+
+    // reveal on scroll
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var els = document.querySelectorAll('.reveal');
+    if(reduced){
+      els.forEach(function(el){ el.classList.add('in'); });
+    } else if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if(entry.isIntersecting){
+            entry.target.classList.add('in');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      els.forEach(function(el){ io.observe(el); });
+    } else {
+      els.forEach(function(el){ el.classList.add('in'); });
+    }
+
+    // mobile menu toggle
+    var burger = document.getElementById('burgerBtn');
+    var mobileMenu = document.getElementById('mobileMenu');
+    if(burger && mobileMenu){
+      burger.addEventListener('click', function(){
+        var isOpen = mobileMenu.classList.toggle('open');
+        burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+      mobileMenu.querySelectorAll('a').forEach(function(a){
+        a.addEventListener('click', function(){
+          mobileMenu.classList.remove('open');
+          burger.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+
+    // nav shadow on scroll
+    var navEl = document.querySelector('header.nav');
+    window.addEventListener('scroll', function(){
+      if(window.scrollY > 12){ navEl.style.borderBottomColor = 'rgba(225,29,46,0.35)'; }
+      else { navEl.style.borderBottomColor = ''; }
+    });
+
+    // 3D wheel pointer tilt
+    var rig = document.getElementById('rig');
+    var wheel = document.getElementById('wheel3d');
+    if(rig && wheel && !reduced){
+      rig.addEventListener('mousemove', function(e){
+        var r = rig.getBoundingClientRect();
+        var px = (e.clientX - r.left) / r.width - 0.5;
+        var py = (e.clientY - r.top) / r.height - 0.5;
+        wheel.style.setProperty('--tiltx', (8 - py * 16) + 'deg');
+        wheel.style.marginLeft = (px * 14) + 'px';
+      });
+      rig.addEventListener('mouseleave', function(){
+        wheel.style.setProperty('--tiltx', '8deg');
+        wheel.style.marginLeft = '0px';
+      });
+    }
+
+    // service card 3D tilt
+    if(!reduced){
+      document.querySelectorAll('[data-tilt]').forEach(function(card){
+        card.addEventListener('mousemove', function(e){
+          var r = card.getBoundingClientRect();
+          var px = (e.clientX - r.left) / r.width - 0.5;
+          var py = (e.clientY - r.top) / r.height - 0.5;
+          card.style.transform = 'perspective(700px) rotateX(' + (py * -8) + 'deg) rotateY(' + (px * 10) + 'deg) translateZ(4px)';
+        });
+        card.addEventListener('mouseleave', function(){
+          card.style.transform = 'perspective(700px) rotateX(0deg) rotateY(0deg) translateZ(0px)';
+        });
+      });
+    }
+  })();
+</script>
+
+</body>
+</html>
